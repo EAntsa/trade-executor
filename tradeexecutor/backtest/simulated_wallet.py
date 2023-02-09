@@ -13,12 +13,12 @@ class SimulatedWallet:
         self.balances: Dict[str, Decimal] = {}
         self.nonce = 0
 
-    def update_balance(self, token_address: str, delta: Decimal):
+    def update_balance(self, token_address: str, delta: Decimal, epsilon=-10):
         assert token_address.lower() == token_address, "No checksummed addresses"
         assert isinstance(delta, Decimal), f"Expected decimal got: {delta.__class__}: {delta}"
         old_balance = self.balances.get(token_address, Decimal(0))
         new_balance = old_balance + delta
-        if new_balance < 0:
+        if new_balance < epsilon:
             raise OutOfSimulatedBalance(f"Simulated wallet balance went negative {new_balance} for token {token_address}")
         self.balances[token_address] = new_balance
 
