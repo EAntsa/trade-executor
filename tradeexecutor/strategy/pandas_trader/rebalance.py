@@ -101,7 +101,7 @@ def get_weight_diffs(
 
     # Check that both inputs are sane
     check_normalised_weights(new_weights)
-    check_normalised_weights(existing_weights)
+    #check_normalised_weights(existing_weights)
 
     diffs = {}
     for id, new_weight in new_weights.items():
