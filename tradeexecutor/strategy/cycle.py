@@ -48,6 +48,13 @@ class CycleDuration(enum.Enum):
     #: Run `decide_trades()` for every 24h hours
     cycle_1d = "1d"
 
+    cycle_2d = "2d"
+    cycle_3d = "3d"
+    cycle_4d = "4d"
+    cycle_5d = "5d"
+    cycle_6d = "6d"
+    cycle_7d = "7d"
+
     #: Don't really know or care about the trade cycle duration.
     #:
     #: Used when doing a simulated execution loop
@@ -170,6 +177,12 @@ _TICK_DURATIONS = {
     CycleDuration.cycle_8h: datetime.timedelta(hours=8),
     CycleDuration.cycle_16h: datetime.timedelta(hours=16),
     CycleDuration.cycle_1d: datetime.timedelta(hours=24),
+    CycleDuration.cycle_2d: datetime.timedelta(hours=48),
+    CycleDuration.cycle_3d: datetime.timedelta(hours=72),
+    CycleDuration.cycle_4d: datetime.timedelta(hours=96),
+    CycleDuration.cycle_5d: datetime.timedelta(hours=120),
+    CycleDuration.cycle_6d: datetime.timedelta(hours=144),
+    CycleDuration.cycle_7d: datetime.timedelta(hours=168),
     CycleDuration.cycle_unknown: datetime.timedelta(days=0),
 }
 
